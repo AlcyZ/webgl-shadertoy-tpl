@@ -1,6 +1,6 @@
 /**
  * @param {WebGL2RenderingContext} gl 
- * @param {string} id 
+ * @param {string} src 
  * @param {number} shaderType 
  * 
  * @return {WebGLShader}
@@ -11,7 +11,9 @@ const compileShaderSrc = (gl, src, shaderType) => {
     gl.compileShader(shader);
 
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        throw "could not compile shader: " + gl.getShaderInfoLog(shader);
+        const type = shaderType === gl.VERTEX_SHADER ? 'vertex' : 'fragment';
+
+        throw `could not compile shader (${type}): ` + gl.getShaderInfoLog(shader);
     }
 
     return shader;
