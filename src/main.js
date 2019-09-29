@@ -1,7 +1,7 @@
 import { setupProgram, compileShaderSrc, applyUniform1f, resize } from './utility';
 
 import vertexShaderSrc from './shader/vertex/shader.glsl';
-import fragmentShaderSrc from './shader/default_fragment_shader.glsl';
+import fragmentShaderSrc from './shader/star_nest.glsl';
 
 const canvas = document.getElementById('magic');
 const gl = canvas.getContext('webgl2');
