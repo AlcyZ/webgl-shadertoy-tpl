@@ -5,7 +5,7 @@ uniform float iTime;
 uniform vec2 iResolution;
 out vec4 fragColor;
 
-void main( )
+void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = gl_FragCoord.xy/iResolution.xy;
